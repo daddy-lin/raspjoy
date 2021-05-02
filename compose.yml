@@ -48,7 +48,23 @@ services:
       - "-s"
       - "store;/Store;yes;no;no;danny;danny;danny;store"
 
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Qixq@wDkdY!fB*GX@kMAD7cuJCadwmu2
 
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: Qixq@wDkdY!fB*GX@kMAD7cuJCadwmu2
+
+      
 networks:
   macnet:
     external:
